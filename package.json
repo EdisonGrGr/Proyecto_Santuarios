@@ -1,0 +1,27 @@
+{
+  "name": "santuarios-upload-service",
+  "version": "1.0.0",
+  "description": "Microservicio de carga de archivos (fotos y videos) para Santuarios usando Supabase",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "supabase",
+    "upload",
+    "vercel",
+    "serverless"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "formidable": "^3.5.1",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "vercel": "^33.4.1"
+  }
+}
