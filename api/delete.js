@@ -1,5 +1,11 @@
 const { createClient } = require('@supabase/supabase-js');
 
+// Helper para enviar respuestas JSON
+const sendJSON = (res, statusCode, data) => {
+  res.writeHead(statusCode, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify(data));
+};
+
 // Configuración de Supabase
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY;
@@ -19,12 +25,13 @@ module.exports = async (req, res) => {
 
   // Manejar preflight
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    res.writeHead(200);
+    return res.end();
   }
 
   // Solo aceptar DELETE
   if (req.method !== 'DELETE') {
-    return res.status(405).json({
+    return sendJSON(res, 405, {
       success: false,
       error: 'Método no permitido. Use DELETE.'
     });
@@ -40,7 +47,7 @@ module.exports = async (req, res) => {
     const filePath = req.query.path || (req.body && req.body.path);
 
     if (!filePath) {
-      return res.status(400).json({
+      return sendJSON(res, 400, {
         success: false,
         error: 'Path del archivo no proporcionado'
       });
@@ -55,7 +62,7 @@ module.exports = async (req, res) => {
       throw new Error(`Error al eliminar archivo: ${error.message}`);
     }
 
-    return res.status(200).json({
+    return sendJSON(res, 200, {
       success: true,
       message: 'Archivo eliminado exitosamente',
       data: data
@@ -64,7 +71,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error('Error en delete:', error);
     
-    return res.status(500).json({
+    return sendJSON(res, 500, {
       success: false,
       error: error.message || 'Error al procesar la solicitud'
     });

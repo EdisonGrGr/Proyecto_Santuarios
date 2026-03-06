@@ -232,9 +232,7 @@
   <script>
     let selectedFile = null;
     let uploadedUrl = null;
-    const API_URL = window.location.hostname === 'localhost' 
-      ? 'http://localhost:3000' 
-      : window.location.origin;
+    const API_URL = window.location.origin;
 
     // Elementos del DOM
     const uploadArea = document.getElementById('uploadArea');
