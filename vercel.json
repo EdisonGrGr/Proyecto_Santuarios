@@ -5,11 +5,5 @@
       "maxDuration": 30,
       "memory": 1024
     }
-  },
-  "env": {
-    "SUPABASE_URL": "https://iflixaqghpsahttzapab.supabase.co",
-    "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmbGl4YXFnaHBzYWh0dHphcGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3OTk4MDEsImV4cCI6MjA4ODM3NTgwMX0.7jgn9uyu5GegB0D29JArZT_3ykZ_dd2Y_SUfc6G5xhc",
-    "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmbGl4YXFnaHBzYWh0dHphcGFiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Mjc5OTgwMSwiZXhwIjoyMDg4Mzc1ODAxfQ.cPU_NRI5UoQL2oYE0ri7-GEOjDLMem1sP3v4kPhdm0Q",
-    "SUPABASE_BUCKET_NAME": "santuarios-media"
   }
 }
