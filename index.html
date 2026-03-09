@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santuarios - Microservicio de Carga</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      background: white;
+      border-radius: 20px;
+      padding: 60px 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      font-size: 5em;
+      margin-bottom: 30px;
+    }
+
+    p {
+      color: #666;
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: transform 0.2s;
+      margin: 10px;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .endpoints {
+      margin-top: 50px;
+      text-align: left;
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .endpoints h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .endpoint {
+      margin: 15px 0;
+      padding: 10px;
+      background: white;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .method {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 0.85em;
+    }
+
+    .post {
+      background: #28a745;
+      color: white;
+    }
+
+    .get {
+      background: #007bff;
+      color: white;
+    }
+
+    .delete {
+      background: #dc3545;
+      color: white;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #28a745;
+      color: white;
+      border-radius: 20px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🏛️</div>
+    <h1>Santuarios</h1>
+    <div class="status">✅ API en línea</div>
+    <p>
+      Microservicio de carga de archivos (fotos y videos) usando Supabase Storage.<br>
+      Compatible con Node.js y Vercel.
+    </p>
+
+    <a href="/test.html" class="button">🧪 Probar Servicio</a>
+
+    <div class="endpoints">
+      <h2>📋 Endpoints Disponibles</h2>
+      
+      <div class="endpoint">
+        <span class="method post">POST</span>
+        <code>/api/upload</code>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Subir imágenes o videos</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/api/list</code>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Listar archivos subidos</p>
+      </div>
+
+      <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        <code>/api/delete?path={filepath}</code>
+        <p style="margin-top: 5px; color: #666; font-size: 0.9em;">Eliminar archivos</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; color: #999; font-size: 0.9em;">
+      <p>
+        📄 <a href="https://github.com/EdisonGrGr/Proyecto_Santuarios" target="_blank" style="color: #667eea;">Documentación en GitHub</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
